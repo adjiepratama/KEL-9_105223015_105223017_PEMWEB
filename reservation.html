@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservasi</title>
+</head>
+<body>
+
+    <section id="reservation-info">
+        <h2>Reservasi Meja</h2>
+        <p>
+        Selamat datang di halaman reservasi Kafe Santai. Kami senang menyambut Anda!
+        Untuk memastikan kenyamanan semua tamu, mohon lakukan pemesanan meja terlebih dahulu
+        melalui formulir di bawah ini atau hubungi kontak kami secara langsung.
+        </p>
+
+        <ul>
+        <li>Reservasi hanya dapat dilakukan minimal 1 hari sebelum kedatangan.</li>
+        <li>Waktu toleransi keterlambatan maksimal 15 menit dari jadwal reservasi.</li>
+        <li>Mohon konfirmasi ulang apabila jumlah tamu berubah.</li>
+        <li>Untuk acara khusus, silakan hubungi tim kami terlebih dahulu.</li>
+        <li>Reservasi dianggap sah setelah Anda menerima konfirmasi dari kami.</li>
+        </ul>
+    </section>
+
+    <section id="reservation-form">
+        <h2>Formulir Reservasi</h2>
+
+        <form action="">
+        
+        <fieldset>
+            <legend>Informasi Pribadi</legend>
+
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email Anda" required>
+
+            <label for="telepon">No. Telepon:</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="No. Telepon Anda" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Detail Reservasi</legend>
+
+            <label for="tanggal">Tanggal:</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <label for="waktu">Waktu:</label>
+            <input type="time" id="waktu" name="waktu" required>
+
+            <label for="jumlah">Jumlah Orang:</label>
+            <select id="jumlah" name="jumlah" required>
+            <option value=""> Pilih Jumlah </option>
+            <option value="1">1 Orang</option>
+            <option value="2">2 Orang</option>
+            <option value="3">3 Orang</option>
+            <option value="4">4 Orang</option>
+            <option value="5">5 Orang</option>
+            <option value="6">6 Orang</option>
+            <option value="7">7 Orang</option>
+            <option value="8">8 Orang</option>
+            <option value="9">9 Orang</option>
+            <option value="10">10 Orang</option>
+            </select>
+
+            <label for="tipe">Tipe Meja:</label>
+            <select id="tipe" name="tipe" required>
+            <option value="">Pilih Tipe Meja</option>
+            <option value="regular">Regular</option>
+            <option value="window">Window Seat</option>
+            <option value="private">Private Room</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Catatan Tambahan</legend>
+
+            <label for="catatan">Catatan Khusus (opsional):</label>
+            <textarea id="catatan" name="catatan" rows="4" placeholder="Tulis permintaan khusus Anda di sini..."></textarea>
+
+            <label>
+            <input type="checkbox" name="persetujuan" required>
+            Saya telah membaca dan menyetujui syarat & ketentuan reservasi.
+            </label>
+        </fieldset>
+
+        <button type="submit">Kirim Reservasi</button>
+        </form>
+    </section>
+
+    <aside id="contact-alternative">
+        <h3>Reservasi via Telepon / WhatsApp</h3>
+        <p>Jika Anda mengalami kesulitan dengan formulir online, Anda dapat menghubungi kami langsung:</p>
+        <ul>
+            <li>Telepon: (021) 555-1234</li>
+            <li>WhatsApp: +62 812-3456-7890</li>
+            <li>Email: reservation@santaicafe.id</li>
+        </ul>
+        <p>Kami siap membantu Anda setiap hari pukul 08.00-22.00.</p>
+    </aside>
+
+</body>
+</html>
