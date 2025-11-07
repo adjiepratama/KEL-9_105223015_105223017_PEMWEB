@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Santai - Menu</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Kopi Santai</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="reservation.html">Reservation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MENU FILTER -->
+  <nav class="menu-filter">
+    <button data-filter="all">All</button>
+    <button data-filter="coffee">Coffee</button>
+    <button data-filter="non-coffee">Non-Coffee</button>
+    <button data-filter="food">Food</button>
+    <button data-filter="snacks">Snacks</button>
+  </nav>
+
+  <!-- MENU GRID -->
+  <section class="menu-grid">
+    <h2>Daftar Menu Lengkap</h2>
+    <div class="grid">
+      <!-- Coffee -->
+      <article data-category="coffee">
+        <figure>
+          <img src="images/espresso.jpg" alt="Espresso">
+          <figcaption>Espresso</figcaption>
+        </figure>
+        <p>Kopi pekat khas Italia.</p>
+        <p class="price">Rp22.000 <mark>Best Seller</mark></p>
+      </article>
+      <article data-category="coffee">
+        <figure>
+          <img src="images/latte.jpg" alt="Latte">
+          <figcaption>Latte</figcaption>
+        </figure>
+        <p>Espresso lembut dengan susu panas.</p>
+        <p class="price">Rp28.000</p>
+      </article>
+      <article data-category="coffee">
+        <figure>
+          <img src="images/cappuccino.jpg" alt="Cappuccino">
+          <figcaption>Cappuccino</figcaption>
+        </figure>
+        <p>Kopi dengan busa susu tebal.</p>
+        <p class="price">Rp30.000</p>
+      </article>
+      <article data-category="coffee">
+        <figure>
+          <img src="images/americano.jpg" alt="Americano">
+          <figcaption>Americano</figcaption>
+        </figure>
+        <p>Kopi hitam klasik dengan aroma kuat.</p>
+        <p class="price">Rp25.000</p>
+      </article>
+
+      <!-- Non-Coffee -->
+      <article data-category="non-coffee">
+        <figure><img src="images/matcha.jpg" alt="Matcha"><figcaption>Matcha Latte</figcaption></figure>
+        <p>Matcha Jepang dengan susu creamy.</p>
+        <p class="price">Rp32.000</p>
+      </article>
+      <article data-category="non-coffee">
+        <figure><img src="images/choco.jpg" alt="Chocolate"><figcaption>Chocolate</figcaption></figure>
+        <p>Coklat panas manis dan lembut.</p>
+        <p class="price">Rp30.000</p>
+      </article>
+      <article data-category="non-coffee">
+        <figure><img src="images/tea.jpg" alt="Tea"><figcaption>Tea</figcaption></figure>
+        <p>Teh hitam premium.</p>
+        <p class="price">Rp20.000</p>
+      </article>
+
+      <!-- Food -->
+      <article data-category="food">
+        <figure><img src="images/pasta.jpg" alt="Pasta"><figcaption>Pasta Carbonara</figcaption></figure>
+        <p>Pasta creamy khas Italia.</p>
+        <p class="price">Rp45.000</p>
+      </article>
+      <article data-category="food">
+        <figure><img src="images/sandwich.jpg" alt="Sandwich"><figcaption>Sandwich</figcaption></figure>
+        <p>Roti isi telur, sayur, dan keju.</p>
+        <p class="price">Rp35.000</p>
+      </article>
+      <article data-category="food">
+        <figure><img src="images/salad.jpg" alt="Salad"><figcaption>Salad Segar</figcaption></figure>
+        <p>Sayuran segar dengan dressing lemon.</p>
+        <p class="price">Rp30.000</p>
+      </article>
+
+      <!-- Snacks -->
+      <article data-category="snacks">
+        <figure><img src="images/cake.jpg" alt="Cake"><figcaption>Chocolate Cake</figcaption></figure>
+        <p>Kue coklat lembut.</p>
+        <p class="price">Rp28.000 <span>New</span></p>
+      </article>
+      <article data-category="snacks">
+        <figure><img src="images/cookies.jpg" alt="Cookies"><figcaption>Cookies</figcaption></figure>
+        <p>Cookies renyah dengan choco chip.</p>
+        <p class="price">Rp20.000</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Kopi Santai. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
