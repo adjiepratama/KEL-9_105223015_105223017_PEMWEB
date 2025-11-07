@@ -1,10 +1,5 @@
 /* === KELOMPOK_XX_NIM1_NIM2/css/style.css === */
 
-/*
-  ==============================================
-  1. CSS Reset & Base Styles
-  ==============================================
-*/
 *,
 *::before,
 *::after {
@@ -14,12 +9,10 @@
 }
 
 :root {
-    /* Color Palette */
-    --color-primary: #6F4E37; /* Coffee Brown */
-    --color-secondary: #F5EFE6; /* Stone Light */
-    --color-dark: #2d3748; /* Gray 800 */
+    --color-primary: #6F4E37;
+    --color-secondary: #F5EFE6;
+    --color-dark: #2d3748;
     
-    /* Typography */
     --font-heading: 'Georgia', serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -29,10 +22,9 @@ body {
     line-height: 1.6;
     color: var(--color-dark);
     background-color: var(--color-secondary);
-    scroll-behavior: smooth; /* 3. Smooth scrolling */
+    scroll-behavior: smooth;
 }
 
-/* Base Typography */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--color-primary);
@@ -42,19 +34,6 @@ h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.5rem; }
 
-/*
-  ==============================================
-  2. Tailwind Custom Components & Utilities
-  ==============================================
-*/
-
-/* --- Component Definitions (using Tailwind @apply) --- */
-/*
-   Catatan: Tailwind CDN akan memproses ini jika di-link dengan benar,
-   seperti yang kita lakukan di HTML, menggantikan sintaks @layer.
-*/
-
-/* Buttons */
 .btn-primary {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -64,7 +43,7 @@ h3 { font-size: 1.5rem; }
     color: white;
     background-color: var(--color-primary);
     border: 2px solid var(--color-primary);
-    transition: all 300ms ease-in-out; /* 3. Hover effects */
+    transition: all 300ms ease-in-out;
 }
 
 .btn-primary:hover {
@@ -81,7 +60,7 @@ h3 { font-size: 1.5rem; }
     color: var(--color-primary);
     background-color: white;
     border: 2px solid var(--color-primary);
-    transition: all 300ms ease-in-out; /* 3. Hover effects */
+    transition: all 300ms ease-in-out;
 }
 
 .btn-secondary:hover {
@@ -89,29 +68,28 @@ h3 { font-size: 1.5rem; }
     color: white;
 }
 
-/* Menu Cards */
 .card {
     background-color: white;
-    border-radius: 0.75rem; /* Border radius */
+    border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Box shadow subtle */
-    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out; /* Smooth transitions */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
 }
 .card:hover {
-    transform: translateY(-5px); /* Hover effects (transform scale) */
+    transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
     max-width: 100%;
-    height: 12rem; /* 4. Images: Fixed height for cards */
-    object-fit: cover; /* Object-fit */
+    height: 12rem;
+    object-fit: cover;
 }
 
 .price {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--color-primary); /* Price styling yang menarik */
+    color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -127,25 +105,24 @@ h3 { font-size: 1.5rem; }
     z-index: 10;
 }
 .badge-bestseller {
-    background-color: #ef4444; /* Red */
+    background-color: #ef4444;
 }
 .badge-new {
-    background-color: #3b82f6; /* Blue */
+    background-color: #3b82f6;
 }
 
-/* Forms */
 .form-group {
     margin-bottom: 1.5rem;
 }
 .input-style {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #d1d5db; /* border */
+    border: 1px solid #d1d5db;
     border-radius: 0.5rem;
     transition: all 200ms ease-in-out;
 }
 .input-style:focus {
-    border-color: #f59e0b; /* focus state */
+    border-color: #f59e0b;
     outline: none;
     box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5);
 }
@@ -166,7 +143,6 @@ legend {
     padding: 0 0.5rem;
 }
 
-/* Menu Filter Buttons (Untuk visual, karena JS dihilangkan) */
 .filter-btn {
     padding: 0.5rem 1rem;
     margin: 0 0.25rem;
@@ -184,13 +160,6 @@ legend {
 }
 
 
-/*
-  ==============================================
-  3. Layout Styling
-  ==============================================
-*/
-
-/* Header/Navigation */
 .header {
     position: sticky;
     top: 0;
@@ -199,7 +168,7 @@ legend {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
 }
 .nav-container {
-    display: flex; /* Flexbox */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1280px;
@@ -207,23 +176,21 @@ legend {
     padding: 1rem 1rem;
 }
 .nav-menu {
-    display: flex; /* Flexbox */
+    display: flex;
     list-style: none;
     gap: 1.5rem;
 }
 .nav-menu a {
-    color: #4b5563; /* Gray-600 */
+    color: #4b5563;
     padding-bottom: 0.25rem;
     transition: color 300ms, border-bottom 300ms;
 }
-.nav-menu a:hover, .nav-menu a.active { /* Hover effects pada menu */
+.nav-menu a:hover, .nav-menu a.active {
     color: var(--color-primary);
     border-bottom: 2px solid var(--color-primary);
 }
 
-/* Hero Section */
 .hero {
-    /* Full width, center alignment */
     width: 100%;
     height: 100vh;
     display: flex;
@@ -231,40 +198,37 @@ legend {
     align-items: center;
     text-align: center;
     
-    /* Background & Fade-in Animation */
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-background.jpg');
     background-size: cover;
     background-position: center;
     
-    opacity: 0; /* 1. Hero section fade-in */
+    opacity: 0;
     animation: fadeIn 1.5s ease-in 0.5s forwards;
-    color: white; /* Text color */
+    color: white;
 }
 
 @keyframes fadeIn {
     to { opacity: 1; }
 }
 
-/* Content Sections */
 .section-padding {
     padding-top: 4rem;
     padding-bottom: 4rem;
 }
 .container {
-    max-width: 1280px; /* Max-width for readability */
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Footer */
 .footer {
-    background-color: var(--color-dark); /* Background color berbeda */
+    background-color: var(--color-dark);
     color: white;
     padding-top: 3rem;
     padding-bottom: 1rem;
 }
 .footer-grid {
-    display: grid; /* Flex layout untuk konten (menggunakan grid untuk struktur 3 kolom) */
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     padding-bottom: 2rem;
@@ -275,16 +239,15 @@ legend {
     }
 }
 .footer a {
-    color: #a0aec0; /* Gray-400 */
+    color: #a0aec0;
     transition: color 300ms;
 }
 .footer a:hover {
-    color: #fcd34d; /* Amber-300 hover */
+    color: #fcd34d;
 }
 
-/* Gallery Section (CSS Grid) */
 .gallery-grid {
-    display: grid; /* CSS Grid */
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 }
@@ -297,14 +260,13 @@ legend {
 .gallery-grid figure img {
     height: 16rem;
     object-fit: cover;
-    transition: transform 500ms; /* Hover effects untuk gallery */
+    transition: transform 500ms;
 }
 .gallery-grid figure:hover img {
     transform: scale(1.05);
 }
 
-/* Image Responsiveness */
 img {
-    max-width: 100%; /* Responsive images */
+    max-width: 100%;
     height: auto;
 }
