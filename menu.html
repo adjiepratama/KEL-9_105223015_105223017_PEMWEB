@@ -1,125 +1,215 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kopi Santai - Menu</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Kopi Santai</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style id="tailwind-config">
+        @tailwind utilities;
+        @layer utilities {
+            .font-serif {
+                font-family: var(--font-heading);
+            }
+            .font-sans {
+                font-family: var(--font-body);
+            }
+            .text-amber-800 {
+                color: var(--color-primary);
+            }
+            .bg-amber-800 {
+                background-color: var(--color-primary);
+            }
+            .bg-stone-100 {
+                background-color: var(--color-secondary);
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-stone-100">
 
-  <!-- HEADER -->
-  <header>
-    <h1>Kopi Santai</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html" class="active">Menu</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="reservation.html">Reservation</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <h1 class="text-2xl font-serif font-bold">Kopi Santai</h1>
+                <p class="text-sm text-gray-500 italic">Nikmati Setiap Tegukan</p>
+            </div>
+            <nav>
+                <ul class="nav-menu text-lg font-medium">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <!-- MENU FILTER -->
-  <nav class="menu-filter">
-    <button data-filter="all">All</button>
-    <button data-filter="coffee">Coffee</button>
-    <button data-filter="non-coffee">Non-Coffee</button>
-    <button data-filter="food">Food</button>
-    <button data-filter="snacks">Snacks</button>
-  </nav>
+    <main class="section-padding">
+        <section class="menu-page container">
+            <h2 class="text-4xl font-serif font-bold text-center mb-10">Daftar Menu Lengkap</h2>
 
-  <!-- MENU GRID -->
-  <section class="menu-grid">
-    <h2>Daftar Menu Lengkap</h2>
-    <div class="grid">
-      <!-- Coffee -->
-      <article data-category="coffee">
-        <figure>
-          <img src="images/espresso.jpg" alt="Espresso">
-          <figcaption>Espresso</figcaption>
-        </figure>
-        <p>Kopi pekat khas Italia.</p>
-        <p class="price">Rp22.000 <mark>Best Seller</mark></p>
-      </article>
-      <article data-category="coffee">
-        <figure>
-          <img src="images/latte.jpg" alt="Latte">
-          <figcaption>Latte</figcaption>
-        </figure>
-        <p>Espresso lembut dengan susu panas.</p>
-        <p class="price">Rp28.000</p>
-      </article>
-      <article data-category="coffee">
-        <figure>
-          <img src="images/cappuccino.jpg" alt="Cappuccino">
-          <figcaption>Cappuccino</figcaption>
-        </figure>
-        <p>Kopi dengan busa susu tebal.</p>
-        <p class="price">Rp30.000</p>
-      </article>
-      <article data-category="coffee">
-        <figure>
-          <img src="images/americano.jpg" alt="Americano">
-          <figcaption>Americano</figcaption>
-        </figure>
-        <p>Kopi hitam klasik dengan aroma kuat.</p>
-        <p class="price">Rp25.000</p>
-      </article>
+            <nav class="text-center mb-12">
+                <button data-filter="all" class="filter-btn active">All</button>
+                <button data-filter="coffee" class="filter-btn">Coffee</button>
+                <button data-filter="non-coffee" class="filter-btn">Non-Coffee</button>
+                <button data-filter="food" class="filter-btn">Food</button>
+                <button data-filter="snacks" class="filter-btn">Snacks</button>
+            </nav>
 
-      <!-- Non-Coffee -->
-      <article data-category="non-coffee">
-        <figure><img src="images/matcha.jpg" alt="Matcha"><figcaption>Matcha Latte</figcaption></figure>
-        <p>Matcha Jepang dengan susu creamy.</p>
-        <p class="price">Rp32.000</p>
-      </article>
-      <article data-category="non-coffee">
-        <figure><img src="images/choco.jpg" alt="Chocolate"><figcaption>Chocolate</figcaption></figure>
-        <p>Coklat panas manis dan lembut.</p>
-        <p class="price">Rp30.000</p>
-      </article>
-      <article data-category="non-coffee">
-        <figure><img src="images/tea.jpg" alt="Tea"><figcaption>Tea</figcaption></figure>
-        <p>Teh hitam premium.</p>
-        <p class="price">Rp20.000</p>
-      </article>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <article class="menu-item card" data-category="coffee">
+                    <figure class="relative">
+                        <img src="images/menu-espresso.jpg" alt="Espresso">
+                        <figcaption><span class="badge badge-new">NEW</span></figcaption>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Espresso (Single/Double)</h3>
+                        <p class="text-sm text-gray-600 my-1">Ekstrak kopi murni dengan krema tebal.</p>
+                        <p class="price">Rp 18.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="coffee">
+                    <figure class="relative">
+                        <img src="images/menu-cappuccino.jpg" alt="Cappuccino">
+                        <figcaption><span class="badge badge-bestseller">BEST SELLER</span></figcaption>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Cappuccino</h3>
+                        <p class="text-sm text-gray-600 my-1">Espresso, steamed milk, dan busa susu tebal.</p>
+                        <p class="price">Rp 25.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="coffee">
+                    <figure><img src="images/menu-latte.jpg" alt="Caffe Latte"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Caffe Latte</h3>
+                        <p class="text-sm text-gray-600 my-1">Espresso dengan porsi steamed milk yang lebih banyak.</p>
+                        <p class="price">Rp 25.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="coffee">
+                    <figure><img src="images/menu-americano.jpg" alt="Americano"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Americano</h3>
+                        <p class="text-sm text-gray-600 my-1">Espresso yang ditambahkan air panas.</p>
+                        <p class="price">Rp 20.000</p>
+                    </div>
+                </article>
+                
+                <article class="menu-item card" data-category="non-coffee">
+                    <figure class="relative">
+                        <img src="images/menu-chocolate.jpg" alt="Signature Chocolate">
+                        <figcaption><span class="badge badge-bestseller">BEST SELLER</span></figcaption>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Signature Chocolate</h3>
+                        <p class="text-sm text-gray-600 my-1">Cokelat premium Belgia dengan susu segar.</p>
+                        <p class="price">Rp 27.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="non-coffee">
+                    <figure><img src="images/menu-matcha.jpg" alt="Matcha Latte"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Matcha Latte</h3>
+                        <p class="text-sm text-gray-600 my-1">Bubuk matcha otentik dari Uji, Jepang.</p>
+                        <p class="price">Rp 28.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="non-coffee">
+                    <figure><img src="images/menu-tea.jpg" alt="Lychee Iced Tea"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Lychee Iced Tea</h3>
+                        <p class="text-sm text-gray-600 my-1">Teh hitam premium dengan sirup leci dan buah leci asli.</p>
+                        <p class="price">Rp 23.000</p>
+                    </div>
+                </article>
 
-      <!-- Food -->
-      <article data-category="food">
-        <figure><img src="images/pasta.jpg" alt="Pasta"><figcaption>Pasta Carbonara</figcaption></figure>
-        <p>Pasta creamy khas Italia.</p>
-        <p class="price">Rp45.000</p>
-      </article>
-      <article data-category="food">
-        <figure><img src="images/sandwich.jpg" alt="Sandwich"><figcaption>Sandwich</figcaption></figure>
-        <p>Roti isi telur, sayur, dan keju.</p>
-        <p class="price">Rp35.000</p>
-      </article>
-      <article data-category="food">
-        <figure><img src="images/salad.jpg" alt="Salad"><figcaption>Salad Segar</figcaption></figure>
-        <p>Sayuran segar dengan dressing lemon.</p>
-        <p class="price">Rp30.000</p>
-      </article>
+                <article class="menu-item card" data-category="food">
+                    <figure><img src="images/menu-pasta.jpg" alt="Aglio Olio Pasta"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Aglio Olio Pasta</h3>
+                        <p class="text-sm text-gray-600 my-1">Spaghetti dengan bawang putih, olive oil, dan smoked beef.</p>
+                        <p class="price">Rp 35.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="food">
+                    <figure><img src="images/menu-sandwich.jpg" alt="Club Sandwich"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Club Sandwich</h3>
+                        <p class="text-sm text-gray-600 my-1">Roti panggang isi ayam, telur, keju, dan sayuran segar.</p>
+                        <p class="price">Rp 32.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="food">
+                    <figure><img src="images/menu-salad.jpg" alt="Caesar Salad"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Caesar Salad</h3>
+                        <p class="text-sm text-gray-600 my-1">Salad Romaine segar dengan dressing caesar dan croutons.</p>
+                        <p class="price">Rp 30.000</p>
+                    </div>
+                </article>
 
-      <!-- Snacks -->
-      <article data-category="snacks">
-        <figure><img src="images/cake.jpg" alt="Cake"><figcaption>Chocolate Cake</figcaption></figure>
-        <p>Kue coklat lembut.</p>
-        <p class="price">Rp28.000 <span>New</span></p>
-      </article>
-      <article data-category="snacks">
-        <figure><img src="images/cookies.jpg" alt="Cookies"><figcaption>Cookies</figcaption></figure>
-        <p>Cookies renyah dengan choco chip.</p>
-        <p class="price">Rp20.000</p>
-      </article>
-    </div>
-  </section>
+                <article class="menu-item card" data-category="snacks">
+                    <figure><img src="images/menu-cake.jpg" alt="Red Velvet Cake"></figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Red Velvet Cake</h3>
+                        <p class="text-sm text-gray-600 my-1">Kue red velvet lembut dengan cream cheese frosting.</p>
+                        <p class="price">Rp 28.000</p>
+                    </div>
+                </article>
+                <article class="menu-item card" data-category="snacks">
+                    <figure class="relative">
+                        <img src="images/menu-cookies.jpg" alt="Soft Baked Cookie">
+                        <figcaption><span class="badge badge-new">NEW</span></figcaption>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="text-xl font-serif font-bold">Soft Baked Cookie</h3>
+                        <p class="text-sm text-gray-600 my-1">Cookie panggang lembut dengan lelehan dark chocolate.</p>
+                        <p class="price">Rp 15.000</p>
+                    </div>
+                </article>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Kopi Santai. All Rights Reserved.</p>
-  </footer>
+            </div>
+        </section>
+    </main>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section about">
+                    <h3 class="text-2xl font-serif font-bold text-white mb-4">Kopi Santai</h3>
+                    <p class="text-gray-400 mb-4">Tempat terbaik untuk bersantai dan menikmati kopi berkualitas.</p>
+                    <address class="not-italic text-gray-400">
+                        Jl. Kenangan No. 10, Jakarta Selatan<br>
+                        Telepon: (021) 123456<br>
+                        Email: <a href="mailto:info@kopisantai.com">info@kopisantai.com</a>
+                    </address>
+                </div>
+                <div class="footer-section hours">
+                    <h3 class="text-xl font-serif font-bold text-white mb-4">Jam Operasional</h3>
+                    <ul class="text-gray-400 space-y-2 list-none">
+                        <li>Senin - Jumat: 08:00 - 22:00</li>
+                        <li>Sabtu - Minggu: 09:00 - 23:00</li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h3 class="text-xl font-serif font-bold text-white mb-4">Ikuti Kami</h3>
+                    <a href="#" class="block text-gray-400">Instagram</a>
+                    <a href="#" class="block text-gray-400">Facebook</a>
+                    <a href="#" class="block text-gray-400">WhatsApp</a>
+                </div>
+            </div>
+            <div class="text-center py-4 border-t border-gray-700">
+                <p class="text-sm text-gray-500">© 2025 Kopi Santai. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
 </body>
 </html>

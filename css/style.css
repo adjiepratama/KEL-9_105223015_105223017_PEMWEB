@@ -1,302 +1,310 @@
-/* =========================
-   STYLE UMUM - KOPI SANTAI
-   ========================= */
-:root {
-  --primary: #6b4226;    
-  --secondary: #c9a97e;   
-  --background: #f8f5f1;  
-  --text: #3a2d24;
-  --light: #ffffff;
+/* === KELOMPOK_XX_NIM1_NIM2/css/style.css === */
+
+/*
+  ==============================================
+  1. CSS Reset & Base Styles
+  ==============================================
+*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+:root {
+    /* Color Palette */
+    --color-primary: #6F4E37; /* Coffee Brown */
+    --color-secondary: #F5EFE6; /* Stone Light */
+    --color-dark: #2d3748; /* Gray 800 */
+    
+    /* Typography */
+    --font-heading: 'Georgia', serif;
+    --font-body: 'Inter', sans-serif;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-secondary);
+    scroll-behavior: smooth; /* 3. Smooth scrolling */
 }
 
-/* =========================
-   HEADER & NAVIGATION
-   ========================= */
-header {
-  background-color: var(--primary);
-  color: var(--light);
-  padding: 15px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+/* Base Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/*
+  ==============================================
+  2. Tailwind Custom Components & Utilities
+  ==============================================
+*/
+
+/* --- Component Definitions (using Tailwind @apply) --- */
+/*
+   Catatan: Tailwind CDN akan memproses ini jika di-link dengan benar,
+   seperti yang kita lakukan di HTML, menggantikan sintaks @layer.
+*/
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    transition: all 300ms ease-in-out; /* 3. Hover effects */
 }
 
-header .atas {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-primary);
 }
 
-
-header .logo h1 {
-  font-size: 1.8rem;
+.btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    background-color: white;
+    border: 2px solid var(--color-primary);
+    transition: all 300ms ease-in-out; /* 3. Hover effects */
 }
 
-header .tagline {
-  font-size: 0.9rem;
-  color: var(--secondary);
-
-  
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+/* Menu Cards */
+.card {
+    background-color: white;
+    border-radius: 0.75rem; /* Border radius */
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* Box shadow subtle */
+    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out; /* Smooth transitions */
+}
+.card:hover {
+    transform: translateY(-5px); /* Hover effects (transform scale) */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: var(--light);
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: var(--secondary);
-  border-bottom: 2px solid var(--secondary);
-}
-
-/* =========================
-   HERO SECTION
-   ========================= */
-.hero {
-  background: url('../images/cafe-bg.jpg') center/cover no-repeat;
-  color: var(--light);
-  text-align: center;
-  padding: 150px 20px;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-
-.btn {
-  background-color: var(--secondary);
-  color: var(--light);
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: var(--primary);
-}
-
-.btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--secondary);
-}
-
-.btn-outline:hover {
-  background-color: var(--secondary);
-  color: var(--light);
-}
-
-/* =========================
-   FEATURED MENU
-   ========================= */
-.featured-menu {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.featured-menu h2 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 30px;
-}
-
-.menu-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-
-.menu-item {
-  background-color: var(--light);
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 15px;
-  max-width: 250px;
-  transition: transform 0.3s;
-}
-
-.menu-item:hover {
-  transform: translateY(-5px);
-}
-
-.menu-item img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.menu-item h3 {
-  color: var(--primary);
-  margin-bottom: 5px;
+.card img {
+    max-width: 100%;
+    height: 12rem; /* 4. Images: Fixed height for cards */
+    object-fit: cover; /* Object-fit */
 }
 
 .price {
-  color: var(--secondary);
-  font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-primary); /* Price styling yang menarik */
+    margin-bottom: 0.5rem;
 }
 
-/* =========================
-   WHY CHOOSE US
-   ========================= */
-.why-us {
-  background-color: var(--primary);
-  color: var(--light);
-  padding: 60px 20px;
-  text-align: center;
+.badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    border-radius: 9999px;
+    z-index: 10;
+}
+.badge-bestseller {
+    background-color: #ef4444; /* Red */
+}
+.badge-new {
+    background-color: #3b82f6; /* Blue */
 }
 
-.why-us h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.input-style {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db; /* border */
+    border-radius: 0.5rem;
+    transition: all 200ms ease-in-out;
+}
+.input-style:focus {
+    border-color: #f59e0b; /* focus state */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.5);
+}
+textarea.input-style {
+    resize: vertical;
 }
 
-.reasons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+fieldset {
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+legend {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    padding: 0 0.5rem;
 }
 
-.reasons article {
-  background-color: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
-  width: 250px;
-  transition: 0.3s;
+/* Menu Filter Buttons (Untuk visual, karena JS dihilangkan) */
+.filter-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background-color: transparent;
+    transition: all 300ms ease-in-out;
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--color-primary);
+    color: white;
 }
 
-.reasons article:hover {
-  background-color: rgba(255,255,255,0.2);
+
+/*
+  ==============================================
+  3. Layout Styling
+  ==============================================
+*/
+
+/* Header/Navigation */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.nav-container {
+    display: flex; /* Flexbox */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+}
+.nav-menu {
+    display: flex; /* Flexbox */
+    list-style: none;
+    gap: 1.5rem;
+}
+.nav-menu a {
+    color: #4b5563; /* Gray-600 */
+    padding-bottom: 0.25rem;
+    transition: color 300ms, border-bottom 300ms;
+}
+.nav-menu a:hover, .nav-menu a.active { /* Hover effects pada menu */
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
 }
 
-.reasons img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
+/* Hero Section */
+.hero {
+    /* Full width, center alignment */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Background & Fade-in Animation */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    opacity: 0; /* 1. Hero section fade-in */
+    animation: fadeIn 1.5s ease-in 0.5s forwards;
+    color: white; /* Text color */
 }
 
-/* =========================
-   MENU PAGE (menu.html)
-   ========================= */
-.menu-filter {
-  text-align: center;
-  margin: 30px 0;
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
-.menu-filter button {
-  background-color: var(--secondary);
-  color: var(--light);
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s;
+/* Content Sections */
+.section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.container {
+    max-width: 1280px; /* Max-width for readability */
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.menu-filter button:hover {
-  background-color: var(--primary);
+/* Footer */
+.footer {
+    background-color: var(--color-dark); /* Background color berbeda */
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+.footer-grid {
+    display: grid; /* Flex layout untuk konten (menggunakan grid untuk struktur 3 kolom) */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.footer a {
+    color: #a0aec0; /* Gray-400 */
+    transition: color 300ms;
+}
+.footer a:hover {
+    color: #fcd34d; /* Amber-300 hover */
 }
 
-.menu-grid {
-  padding: 40px 20px;
-  text-align: center;
+/* Gallery Section (CSS Grid) */
+.gallery-grid {
+    display: grid; /* CSS Grid */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.menu-grid h2 {
-  color: var(--primary);
-  margin-bottom: 25px;
+.gallery-grid figure img {
+    height: 16rem;
+    object-fit: cover;
+    transition: transform 500ms; /* Hover effects untuk gallery */
+}
+.gallery-grid figure:hover img {
+    transform: scale(1.05);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  justify-items: center;
-}
-
-.grid article {
-  background-color: var(--light);
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  padding: 15px;
-  max-width: 250px;
-}
-
-.grid article img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.price span, .price mark {
-  background-color: var(--secondary);
-  color: var(--light);
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 0.8rem;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-footer {
-  background-color: var(--primary);
-  color: var(--light);
-  text-align: center;
-  padding: 30px 10px;
-  margin-top: 40px;
-}
-
-footer a {
-  color: var(--secondary);
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+/* Image Responsiveness */
+img {
+    max-width: 100%; /* Responsive images */
+    height: auto;
 }

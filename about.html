@@ -1,96 +1,138 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentang Kami</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Kopi Santai</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style id="tailwind-config">
+        @tailwind utilities;
+        @layer utilities {
+            .font-serif {
+                font-family: var(--font-heading);
+            }
+            .font-sans {
+                font-family: var(--font-body);
+            }
+            .text-amber-800 {
+                color: var(--color-primary);
+            }
+            .bg-amber-800 {
+                background-color: var(--color-primary);
+            }
+            .bg-stone-100 {
+                background-color: var(--color-secondary);
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-stone-100">
 
-    <section id="story">
-        <h2>Cerita Kami</h2>
-        <figure>
-        <img src="" alt="Foto Kafe Santai">
-        <figcaption>Suasana hangat di Kafe Santai</figcaption>
-        </figure>
-        <p>Kafe Santai lahir dari kecintaan kami terhadap kopi dan kebersamaan. Sejak awal berdiri, kami percaya bahwa secangkir kopi dapat menjadi jembatan antara cerita, ide, dan persahabatan. Dari biji pilihan hingga suasana ruang, setiap detail kami rancang dengan penuh cinta.</p>
-        <p>Kami berawal dari sebuah kedai kecil di sudut kota yang dipenuhi tawa pelanggan pertama kami. Seiring waktu, Kafe Santai tumbuh menjadi tempat di mana para penikmat kopi, seniman, dan pekerja kreatif berbagi inspirasi.</p>
-        <p>Filosofi kami sederhana: setiap tegukan harus menghadirkan rasa hangat, jujur, dan penuh makna. Kami berkomitmen untuk menjaga kualitas, keramahan, dan keberlanjutan dalam setiap langkah perjalanan kami.</p>
-
-        <blockquote><q>Kopi yang baik bukan hanya soal rasa, tapi tentang cerita di baliknya.</q></blockquote>
-    </section>
-
-    <section id="values">
-        <h2>Nilai-Nilai Kami</h2>
-        <ul>
-        <li>Kualitas Premium - dari biji kopi terbaik dan bahan pilihan lokal.</li>
-        <li>Pelayanan Terbaik - senyum dan keramahan adalah budaya kami.</li>
-        <li>Keberlanjutan (Sustainability) - mendukung petani kopi lokal dan bahan ramah lingkungan.</li>
-        <li>Komunitas (Community) - ruang untuk berbagi ide, seni, dan kolaborasi.</li>
-        <li>Konsistensi - menjaga cita rasa dan pengalaman terbaik setiap hari.</li>
-        </ul>
-    </section>
-
-    <section id="gallery">
-        <h2>Galeri Kafe</h2>
-        <div class="gallery">
-        <figure>
-            <img src="" alt="Interior Kafe">
-            <figcaption>Interior hangat dan nyaman</figcaption>
-        </figure>
-        <figure>
-            <img src="" alt="Eksterior Kafe">
-            <figcaption>Eksterior modern dengan sentuhan alami</figcaption>
-        </figure>
-        <figure>
-            <img src="" alt="Barista membuat kopi">
-            <figcaption>Barista ahli kami dalam aksi</figcaption>
-        </figure>
-        <figure>
-            <img src="" alt="Suasana pelanggan">
-            <figcaption>Suasana ramai dan bersahabat</figcaption>
-        </figure>
-        <figure>
-            <img src="" alt="Latte art">
-            <figcaption>Latte art penuh keindahan</figcaption>
-        </figure>
-        <figure>
-            <img src="" alt="Area outdoor kafe">
-            <figcaption>Area outdoor dengan nuansa hijau</figcaption>
-        </figure>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <h1 class="text-2xl font-serif font-bold">Kopi Santai</h1>
+                <p class="text-sm text-gray-500 italic">Nikmati Setiap Tegukan</p>
+            </div>
+            <nav>
+                <ul class="nav-menu text-lg font-medium">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <section id="location">
-        <h2>Lokasi & Jam Buka</h2>
-        <iframe src="" frameborder="0"></iframe>
+    <main>
+        <section class="section-padding bg-white">
+            <div class="container">
+                <h2 class="text-4xl font-serif font-bold text-center mb-10">Cerita Kami</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <figure>
+                        <img src="images/cafe-interior.jpg" alt="Interior Kopi Santai" class="w-full h-auto rounded-lg shadow-lg">
+                        <figcaption class="text-sm text-center text-gray-500 italic mt-2">Suasana interior Kopi Santai yang hangat.</figcaption>
+                    </figure>
+                    <div class="story-text">
+                        <p class="mb-4">Kopi Santai lahir dari kecintaan sederhana akan secangkir kopi yang nikmat dan suasana yang tenang. Kami memulai perjalanan kami di tahun 2020 sebagai sebuah kedai kopi kecil di sudut jalan, dengan impian untuk menciptakan 'rumah kedua' bagi para penikmat kopi di Jakarta.</p>
+                        <p class="mb-4">Kami mendedikasikan diri untuk menyajikan kualitas tanpa kompromi, mulai dari proses roasting yang presisi hingga sentuhan akhir dari barista kami yang terampil.</p>
+                        <blockquote class="text-xl font-serif italic border-l-4 border-amber-800 pl-4 py-2 text-gray-700 mt-6">
+                            "Kopi yang baik adalah awal dari hari yang baik. Kami di sini untuk memastikannya."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <table>
-            <tr>
-            <th>Hari</th>
-            <th>Jam Buka</th>
-            </tr>
-            <tr>
-                <td>Senin - Jumat</td>
-                <td>08.00 - 22.00</td>
-            </tr>
-            <tr>
-                <td>Sabtu</td>
-                <td>09.00 - 23.00</td>
-            </tr>
-            <tr>
-                <td>Minggu</td>
-                <td>09.00 - 21.00</td>
-            </tr>
-        </table>
+        <section class="section-padding bg-stone-100">
+            <div class="container">
+                <h2 class="text-4xl font-serif font-bold text-center mb-10">Galeri Kafe</h2>
+                <div class="gallery-grid">
+                    <figure class="rounded-lg overflow-hidden shadow-md group">
+                        <img src="images/gallery-1.jpg" alt="Suasana kafe">
+                        <figcaption class="text-center py-2 bg-amber-800 text-white text-sm">Area Duduk</figcaption>
+                    </figure>
+                    <figure class="rounded-lg overflow-hidden shadow-md group">
+                        <img src="images/gallery-2.jpg" alt="Barista">
+                        <figcaption class="text-center py-2 bg-amber-800 text-white text-sm">Barista Kami</figcaption>
+                    </figure>
+                    <figure class="rounded-lg overflow-hidden shadow-md group">
+                        <img src="images/gallery-3.jpg" alt="Latte art">
+                        <figcaption class="text-center py-2 bg-amber-800 text-white text-sm">Seni Latte</figcaption>
+                    </figure>
+                    <figure class="rounded-lg overflow-hidden shadow-md group">
+                        <img src="images/gallery-4.jpg" alt="Eksterior kafe">
+                        <figcaption class="text-center py-2 bg-amber-800 text-white text-sm">Tampak Luar</figcaption>
+                    </figure>
+                    <figure class="rounded-lg overflow-hidden shadow-md group">
+                        <img src="images/gallery-5.jpg" alt="Menu makanan">
+                        <figcaption class="text-center py-2 bg-amber-800 text-white text-sm">Hidangan Kami</figcaption>
+                    </figure>
+                    <figure class="rounded-lg overflow-hidden shadow-md group">
+                        <img src="images/gallery-6.jpg" alt="Acara komunitas">
+                        <figcaption class="text-center py-2 bg-amber-800 text-white text-sm">Acara Komunitas</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <address>
-        Kafe Santai<br>
-        Jl. Melati No. 12, Jakarta Pusat, Indonesia<br>
-        Telepon: (021) 555-1234<br>
-        Email: info@harmonicafe.id
-        </address>
-    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section about">
+                    <h3 class="text-2xl font-serif font-bold text-white mb-4">Kopi Santai</h3>
+                    <p class="text-gray-400 mb-4">Tempat terbaik untuk bersantai dan menikmati kopi berkualitas.</p>
+                    <address class="not-italic text-gray-400">
+                        Jl. Kenangan No. 10, Jakarta Selatan<br>
+                        Telepon: (021) 123456<br>
+                        Email: <a href="mailto:info@kopisantai.com">info@kopisantai.com</a>
+                    </address>
+                </div>
+                <div class="footer-section hours">
+                    <h3 class="text-xl font-serif font-bold text-white mb-4">Jam Operasional</h3>
+                    <ul class="text-gray-400 space-y-2 list-none">
+                        <li>Senin - Jumat: 08:00 - 22:00</li>
+                        <li>Sabtu - Minggu: 09:00 - 23:00</li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h3 class="text-xl font-serif font-bold text-white mb-4">Ikuti Kami</h3>
+                    <a href="#" class="block text-gray-400">Instagram</a>
+                    <a href="#" class="block text-gray-400">Facebook</a>
+                    <a href="#" class="block text-gray-400">WhatsApp</a>
+                </div>
+            </div>
+            <div class="text-center py-4 border-t border-gray-700">
+                <p class="text-sm text-gray-500">© 2025 Kopi Santai. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
